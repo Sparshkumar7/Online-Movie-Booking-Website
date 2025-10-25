@@ -1,0 +1,274 @@
+<html>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <header>
+        <main>
+            <div class="left">
+                <img src="Photos/image_processing20220925-29607-zxxb81.jpg" alt="">
+            </div>
+
+            <div class="search-bar">
+                <input type="search" placeholder="Search">
+                <button><span class="material-symbols-outlined">search</span></button>
+            </div>
+        </main>
+    </header>
+
+    <div class="box">
+        <button><a href="#"> Login In</a></button>
+    </div>
+
+    <div id="popup-box-1" class="modal">
+        <div class="content1">
+            <h1>DEALS & EXCLUSIVES</h1>
+            <p class="p2"><img src="Photos/7.jpg" style="width: 100%; height: 100%; margin: 0%;"></p>
+            <p class="p2"><img src="Photos/3.jpg" style="width: 100%; height: 100%;"></p>
+            <p class="p2"><img src="Photos/2021_01_23_9487_MovieCard.jpg" style="width: 101%; height: 100%; "></p>
+            <a href="#" class="box-close">
+                ×</a>
+        </div>
+    </div>
+    <div id="popup-box-2" class="modal">
+        <div class="section">
+            <img src="Photos/Golden-Gift-Card.jpg" style="width: 100%; height: 20%; border-radius: 8px;">
+            <p style=" display: block; margin-top: 20px;"><label>Enter The Sender Name: </label>
+                <input style=" width: 100%; padding: 5px; margin-bottom: 5px; box-sizing: border-box;" id="Name"
+                    type="text" style="height: 25px;">
+            </p>
+
+            <p style=" display: block; margin-top: -5%;"><label>Enter Phone Number </label>
+                <input style=" width: 100%; padding: 5px; margin-bottom: 5px; box-sizing: border-box;" id="phoneNumber"
+                    type="number" style="height: 25px;">
+            </p>
+
+            <p style=" display: block; margin-top: -5%;"><label>Gift Card Amount: </label>
+                <select id="select" required>
+                    <option value="200">₹200</option>
+                    <option value="350">₹350</option>
+                    <option value="500">₹500</option>
+                </select>
+            <p style=" display: block; margin-top: -5%;"><label>Quantity </label>
+                <input style=" width: 100%; padding: 5px; margin-bottom: 5px; box-sizing: border-box;" id="Quantity"
+                    style="height: 25px;">
+            </p>
+
+            <button class="b" onclick="callalert()">Purchase Gift Card</button>
+            <a href="#" class="box-close">
+                ×</a>
+        </div>
+    </div>
+
+    <nav>
+        <p>Home</p>
+        <p>Movies</p>
+        <p>My bookings</p>
+        <a href="#popup-box-1" style="text-decoration: none;">
+            <p>Offers</p>
+        </a>
+        <a href="#popup-box-2" style="text-decoration: none;">
+            <p>Gift Card</p>
+        </a>
+    </nav>
+
+    <div class="slider">
+
+    </div>
+    <div class="title">NOW SHOWING </div>
+    <div class="movie-container">
+        <div class="movie">
+            <img src="Photos/MV5BNWU5ZDRmMWItZGU0NC00NzZjLTgzYjctY2RlMzI3OTNkN2U5XkEyXkFqcGdeQXVyMTE0MTY2Mzk2._V1_.jpg"
+                alt="">
+            <div class="movie-details">
+                <h2>Animal</h2>
+                <p> Action, Crime</p>
+                <p> Hindi</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 3h 21m</p>
+                <button class="buy-button"><a href="Links/Animal.html">Buy Ticket</button></a>
+
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img src="Photos/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_.jpg" alt="">
+            <div class="movie-details">
+                <h2>Life of Pi</h2>
+                <p>Adventure</p>
+                <p>English</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 2h 7m</p>
+                <button class="buy-button"><a href="Links/Life of pie.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/The Nun.jpg" alt="">
+            <div class="movie-details">
+                <h2>The Nun</h2>
+                <p>Horror, Mystery</p>
+                <p>English</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule
+                    </span> 1h 36m</p>
+                <button class="buy-button"><a href="Links/The Nun.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/Drishyam_2.jpg" alt="">
+            <div class="movie-details">
+                <h2>Drishyam 2</h2>
+                <p> Thriller Mystery</p>
+                <p> Malayalam</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 2h 20m</p>
+                <button class="buy-button"><a href="Links/Drishyam 2.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/MV5BNmQ3MThkOWEtNTA0NC00YzI2LWIxZjEtZjdlZTVmNzQ2ZGViXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg"
+                alt="Movie 3">
+            <div class="movie-details">
+                <h2>OMG 2</h2>
+                <p> Comedy, Drama</p>
+                <p> Hindi</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 2h 35m</p>
+                <button class="buy-button"><a href="Links/OMG 2.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/Joker.webp" alt="Movie 3">
+            <div class="movie-details">
+                <h2>Joker</h2>
+                <p>Crime, Thriller</p>
+                <p>English</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 2h 2m </p>
+                <button class="buy-button"><a href="Links/Joker.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/WhatsApp_Image_2023-01-24_at_13.15.36_1674548089155.jpg" alt="Movie 3">
+            <div class="movie-details">
+                <h2>Fukrey 3</h2>
+                <p>Comedy, Thriller</p>
+                <p>Hindi</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule</span> 2h 27m</p>
+                <button class="buy-button"><a href="Links/Fukrey 3.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/4311f1f7-9863-4be4-a45b-921adcf4dbac.jpg" alt="Movie 3">
+            <div class="movie-details">
+                <h2>Annabelle</h2>
+                <p>Horror,Mystery</p>
+                <p> English</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 1h 39m</p>
+                <button class="buy-button"><a href="Links/Annabelle.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/Stree.jpg" alt="Movie 3">
+            <div class="movie-details">
+                <h2>Stree</h2>
+                <p>Horror, Comedy</p>
+                <p>Hindi</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 2h 9m </p>
+                <button class="buy-button"><a href="Links/Stree.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/Stree-2-Advance-Booking.jpg" alt="">
+            <div class="movie-details">
+                <h2>Stree 2</h2>
+                <p>Horror, Comedy</p>
+                <p>Hindi</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span>2h 29m</p>
+                <button class="buy-button"><a href="Links/Stree2.html"> Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/Tiger 3.jpg" alt="">
+            <div class="movie-details">
+                <h2>Tiger 3</h2>
+                <p> Action, Thriller</p>
+                <p> Hindi, Telugu</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 2h 30m</p>
+                <button class="buy-button" <a href="Links/">Buy Ticket</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="Photos/The Jungle Book.jpeg" alt="">
+            <div class="movie-details">
+                <h2>The Jungle Book</h2>
+                <p> Adventure, Drama</p>
+                <p> English</p>
+                <p><span class="material-symbols-outlined" style="font-size: 15px;">
+                        schedule </span> 1h 45m</p>
+                <button class="buy-button"><a href="Links/The jungle Book.html">Buy Ticket</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="About">
+            <h2 style="margin: 2%; margin-left: 8%; font-size: 20px;">About Us</h2>
+            <p style="padding: 0%; margin-left: 7%; font-size: 15px;">Terms and Conditions</p>
+            <p style="padding: 0%; margin-left: 7%; font-size: 15px;">Privacy Policy</p>
+        </div>
+        <div class="get">
+            <h3 style="margin: 2%; margin-left: 35%; font-size: 20px; margin-top: -8%; ">Get in Touch</h3>
+            <p style="padding: 0%; margin-left: 37%; font-size: 15px;">Contact Us</p>
+            <p style="padding: 0%; margin-left: 37%; font-size: 15px;">Feedback</p>
+            <p style="padding: 0%; margin-left: 37%; font-size: 15px;">FAQ's</p>
+        </div>
+        <h3 class="p1">FOLLOW US</h3>
+
+        <div class="icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+    <script>
+        function callalert() {
+            const Name = document.getElementById('Name').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const select = document.getElementById('select').value;
+            const Quantity = document.getElementById('Quantity').value;
+
+            alert(`-----GIFT CARD PURCHASE SUCCESSFULL----- \n Purchase Details-\n Name: ${Name}\nPhone Number: ${phoneNumber}\nPrice: ${select}\nQuantity: ${Quantity}`);
+        }
+        function goBack() {
+            window.history.back();
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+<html>
+
+<head>
+  <title>Movie Seat Booking</title>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    .all1 {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 86vh;
+      width: 60%;
+      margin-top: -36%;
+      margin-left: -1%;
+    }
+
+    .seat {
+      background-color: white;
+      height: 26px;
+      width: 32px;
+      margin: 5px;
+      font-size: 50px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: blue;
+    }
+
+    .seat.selected {
+      background-color: green;
+    }
+
+    .seat.sold {
+      background-color: gray;
+    }
+
+    .seat:not(.sold):hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+
+    .showcase {
+      background: rgba(0, 0, 0, 0.1);
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: white;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .showcase li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+    }
+
+    .showcase li small {
+      margin-left: 2px;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .screen {
+      background-color: #fff;
+      height: 120px;
+      width: 100%;
+      margin: 15px 0;
+      transform: rotateX(-48deg);
+      box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 90%;
+    }
+
+    form {
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 470px;
+      margin-left: 59%;
+      height: 80vh;
+      margin-top: -10%;
+      color: white;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    video {
+      position: fixed;
+      top: 58%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: -1;
+    }
+
+    button:hover {
+      background-color: green;
+      cursor: pointer;
+    }
+
+    .text {
+      color: red;
+      background: white;
+      margin-left: 70%;
+      width: 30%;
+      height: 26px;
+      margin-top: -7%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+
+    .times {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      color: black;
+      margin-left: 0%;
+    }
+
+    .time {
+      font-size: 14px;
+      width: fit-content;
+      padding: 10px;
+      border-radius: 2mm;
+      cursor: pointer;
+      background: white;
+    }
+
+    .times input {
+      display: none;
+    }
+
+    .times input:checked+label {
+      background: rgb(28, 185, 120);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop>
+    <source src="/Online-Movie-Booking-Website-main/Videos/Untitled_Project_V1 (2).mp4" type="video/mp4">
+  </video>
+
+  <h1 style="color:white; background-color:black; margin-top:-1%; width:102%; margin-left:-8px; height:6%;">The Nun -
+    English</h1>
+  <div class="h3" style="color:white; padding:8px; margin-left:-0.7%; margin:2px; font-size:17px;">
+    <h4 style="margin-top:-1%; color:white;">About Movie</h4>
+    <p>When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a
+      novitiate on the threshold of her final vows are sent by the Vatican to investigate.</p>
+  </div>
+  <h3 style="color:white; margin:1%;">Shows Timing</h3>
+
+  <div class="times">
+    <input type="radio" name="time" id="t1" checked />
+    <label for="t1" class="time">2:00 AM</label>
+    <input type="radio" id="t2" name="time" />
+    <label for="t2" class="time"> 5:20 PM</label>
+    <input type="radio" id="t3" name="time" />
+    <label for="t3" class="time"> 7:30 PM</label>
+    <input type="radio" id="t4" name="time" />
+    <label for="t4" class="time"> 9:05 PM</label>
+    <input type="radio" id="t5" name="time" />
+    <label for="t5" class="time"> 10:00 PM</label>
+    <input type="radio" id="t6" name="time" />
+    <label for="t6" class="time"> 11:55 PM</label>
+  </div>
+
+  <form id="bookingForm">
+    <h3 style="text-align:center;">Ticket Booking </h3>
+    <label>Customer Name:</label>
+    <input type="text" id="customerName" required>
+
+    <label>Phone Number:</label>
+    <input type="tel" id="phoneNumber" required>
+
+    <label>Email Id:</label>
+    <input type="text" id="EmailID" required>
+
+    <label>Date:</label>
+    <input type="date" id="date" required>
+
+    <label>Seats:</label>
+    <input type="number" id="quantity" placeholder="How many Seats" oninput="calculateTotal()">
+    <p id="result" style="color: white; margin-top: 10px; font-weight: bold;">Total Price: ₹0</p>
+
+    <button type="button" onclick="submitForm()">Book Now</button>
+  </form>
+
+  <div class="all1">
+    <h3>Select Seats Your Choice </h3>
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>Available</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat sold"></div>
+        <small>Sold</small>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="screen">Screen This Way</div>
+
+      <div class="row">
+        <pre>A</pre>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat" style="margin-right:30px;"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+
+      <div class="row">
+        <pre>B</pre>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat" style="margin-right:30px;"></div>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+
+      <div class="row">
+        <pre>C</pre>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold" style="margin-right:30px;"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+
+      <div class="row">
+        <pre>D</pre>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat" style="margin-right:30px;"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+      </div>
+
+      <div class="row">
+        <pre>E</pre>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat" style="margin-right:30px;"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+      </div>
+
+      <div class="row">
+        <pre>F</pre>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat" style="margin-right:30px;"></div>
+        <div class="seat sold"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div onClick="toggleBackgroundColor(this)" class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text">
+    <p>Adult Movie - Children below 18 years are not allowed.</p>
+  </div>
+
+  <script>
+    function toggleBackgroundColor(element) {
+      if (element.style.backgroundColor === 'green') {
+        element.style.backgroundColor = '';
+      } else {
+        element.style.backgroundColor = 'green';
+      }
+    }
+
+    function calculateTotal() {
+      let pricePerItem = 400;
+      let quantity = document.getElementById("quantity").value;
+      let result = document.getElementById("result");
+
+      if (quantity && quantity > 0) {
+        let totalPrice = pricePerItem * quantity;
+        result.innerText = "Total Price: ₹" + totalPrice;
+      } else {
+        result.innerText = "Total Price: ₹0";
+      }
+    }
+
+    function submitForm() {
+      const customerName = document.getElementById('customerName').value;
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const EmailID = document.getElementById('EmailID').value;
+      const date = document.getElementById('date').value;
+      const quantity = document.getElementById('quantity').value;
+
+      alert(`-----BOOKING SUCCESSFULL-----\nBooking Details->\nMovie Name: The Nun\nCustomer Name: ${customerName}\nPhone Number: ${phoneNumber}\nEmail ID: ${EmailID}\nDate: ${date}\nSeats: ${quantity}`);
+    }
+
+    // Initialize price display
+    calculateTotal();
+  </script>
+</body>
+
+</html>
